@@ -1,29 +1,189 @@
 body {
-  background-color: rgb(255, 255, 255);
-  width: 1000px;
-  margin: 10px auto;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #010102;
+  font-family: "Chicle";
+  
+  margin: 1% auto;
   text-align: center;
-  padding: 10px;
   user-select: none;
 }
 
-h2 {
-  font-size: 30px;
-  text-align: center;
-  height: 75px;
+button {
+  background-image: url("images/rainbow.gif");
+  font-family: "Chicle";
+  color: rgb(255, 0, 0);
+  font-size: 35px;
+  text-shadow: 2px 2px black;
+  border-radius: 10px;
+  border: solid rgba(203, 203, 203, 0.5) 2px;
+  padding: 0 20px;
+  transition: 0.5s;
 }
 
-span{
-  font-size: 75px;
-  margin-top: 20px;
+button:hover {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:disabled {
+  transition: 0.5s;
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+    lightgray,
+    darkgray,
+    black
+    
+  );
+  color: rgb(57, 57, 57);
+  opacity: .4;
+}
+
+h1 {
+  color: #f7daac;
+  font-size: 55px;
+  text-align: center;
+  text-shadow: 7px 2px black;
+  height: px;
+  margin-top: 25px;
+  margin-bottom: 1.5%;
+}
+
+h2 {
+  font-size: 35px;
+  margin-top: 0;
+  margin-bottom: 1%;
+  color: #d4a861;
+  text-shadow: 2px 2px black;
+}
+
+.square {
+  transition: 0.25s;
+  background-color: rgba(196, 196, 196, 0.4);
+  border-radius: 15%;
+  cursor: pointer;
+}
+.square:hover {
+  transition: 0.3s;
+  background-color: rgba(196, 196, 196, 1);
+}
+
+.playMode input[type="radio"] {
+  display: none;
+}
+
+.playMode label {
+  display: inline-block;
+  background-image: linear-gradient(
+    to bottom right,
+   white,
+   black
+  );
+  font-family: "Chicle";
+  opacity: 0.4;
+  color: rgb(99, 98, 98);
+  font-size: 25px;
+  text-shadow: 2px 2px black;
+  border-radius: 10px;
+  border: solid rgba(203, 203, 203, 0.5) 2px;
+  padding: 0 10px;
+  margin: 0px 5px 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.playMode input[type="radio"]:checked+label {
+ 
+  background-image: linear-gradient(
+    to bottom right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+
+  color: red;
+  opacity: 1;
+}
+
+.character-image {
+  position: relative;
+  padding-top: 1% ;
+  border-radius: 10%;
+  margin: 3%;
+  opacity: 0.86;
+  z-index: +1;
+}
+
+#cell-1 {
+  border-radius: 0;
+}
+
+#cell-2 {
+  border-radius: 0;
+}
+
+#cell-3 {
+  border-radius: 0;
+}
+
+#cell-4 {
+  border-radius: 0;
+}
+
+#cell-5 {
+  border-radius: 0;
+}
+
+#cell-6 {
+  border-radius: 0;
+}
+
+#cell-7 {
+  border-radius: 0;
+}
+
+#cell-8 {
+  border-radius: 0;
+}
+
+#cell-9 {
+  border-radius: 0;
+}
+
+#timer {
+  color: #d4a861;
+  font-size: 25px;
+  text-shadow: 2px 2px black;
+}
+
+#videoBg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.board {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 455px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 1% auto;
 }
 
 div[id^="row-"] div {
-  width: 200px;
-  height: 200px;
-  border: 1px solid red;
+  width: 30%;
+  height: 120px;
+  border: 4px solid rgb(23, 23, 23);
   float: left;
-
 }
 
 div[id^="row-"] div:last-child {
@@ -34,23 +194,97 @@ div[id^="row-"] div:first-child {
   border-left: none;
 }
 
-div[id="row-1"] div{
+div[id="row-1"] div {
   border-top: none;
 }
 
-div[id="row-3"] div{
-    border-bottom: none;
+div[id="row-3"] div {
+  border-bottom: none;
 }
 
 div[id^="row-"] {
-  clear: float;
-  width: 608px;
+  clear: left;
+  width: 108%;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-div.board {
-  width: 608px;
-  overflow: hidden;
-  margin: 0 auto;
+.bgcolor {
+  -webkit-animation: bgcolor 3s infinite;
+  animation: bgcolor 3s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+@keyframes bgcolor {
+  0% {
+    background-color: #0095ff;
+  }
+
+  30% {
+    background-color: #64e026;
+  }
+
+  60% {
+    background-color: #eb670f;
+  }
+
+  90% {
+    background-color: rgb(255, 37, 73);
+  }
+
+  100% {
+    background-color: #8126db;
+  }
+}
+
+.fade-in {
+  animation: fadeIn linear 0.3s;
+  -webkit-animation: fadeIn linear 0.3s;
+  -moz-animation: fadeIn linear 0.3s;
+  -o-animation: fadeIn linear 0.3s;
+  -ms-animation: fadeIn linear 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

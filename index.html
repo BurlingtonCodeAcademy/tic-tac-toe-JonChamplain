@@ -5,33 +5,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tic Tac Toe</title>
+  <title>Trip Tac Toe</title>
   <link type="text/css" rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Chicle&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
-  <h2>Tic Tac Toe</h2>
+  <script>
+   
+  </script>
+  <!-- <video autoplay muted loop id="videoBg">
+    <source src="images/slowparticles.mov" type="video/mp4">
+    <source src="images/slowparticlesreversed.mov" type="video/mp4">
+    </video> -->
+  <img id="videoBg" src="images/particles2.gif">
+  
+  <h1 id=highlight>Trip - Tac - Toe</h1>
+
+  <div class = "playMode">
+    <input type="radio" id="single-player" name="gameMode" value="singlePlayer">
+    <label for="single-player">Single Player</label>
+    <input type="radio" id="two-player" name="gameMode" value="twoPlayer">
+    <label for="two-player">Two Player</label>
+  </div>
+  <div class="status">
+   
+    <button id="start" type="button">Start</button>
+  </div>
+  
   <div class="board">
     <div id="row-1">
-      <div id="cell-0"></div>
-      <div id="cell-1"></div>
-      <div id="cell-2"></div>
+      <div class=square id="cell-1"></div>
+      <div class=square id="cell-2"></div>
+      <div class=square id="cell-3"></div>
     </div>
     <div id="row-2">
-      <div id="cell-3"></div>
-      <div id="cell-4"></div>
-      <div id="cell-5"></div>
+      <div class=square id="cell-4"></div>
+      <div class=square id="cell-5"></div>
+      <div class=square id="cell-6"></div>
     </div>
     <div id="row-3">
-      <div id="cell-6"></div>
-      <div id="cell-7"></div>
-      <div id="cell-8"></div>
+      <div class=square id="cell-7"></div>
+      <div class=square id="cell-8"></div>
+      <div class=square id="cell-9"></div>
     </div>
   </div>
 
-  <div class="status">
-    <button id="start" type="button">Start Game</button>
-  </div>
+  <h2 id="status-bar">Press Start Button</span></h2>
+  <div id="timer">Time Elapsed:</div>
+
+ 
   <script src="main.js"></script>
 </body>
 
