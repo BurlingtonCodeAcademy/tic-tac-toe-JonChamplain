@@ -17,6 +17,7 @@ twoPlayer.addEventListener("click", check);
 
 let statusBar = document.getElementById("status-bar");
 
+document.getElementById("audio").volume = 0.1;
 
 //////Global variable initializations////////////
 
